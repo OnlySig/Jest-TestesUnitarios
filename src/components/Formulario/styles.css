@@ -1,0 +1,10 @@
+.inputStyled {
+    border-radius: 36px 0 0 36px;
+    border: 2px solid #000;
+    border-right: 0px;
+    outline: none;
+    padding: 18px 100px;
+    width: 430px;
+    height: 80px;
+    box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.75);
+}
