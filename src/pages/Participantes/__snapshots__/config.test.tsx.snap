@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`a pagina de configuracao deve ser renderizada corretamente 1`] = `
+<div>
+  <header
+    class="sc-beySPh bsjzSc"
+  >
+    <img
+      alt="logo do siteDahora"
+      src="Logo Branco - Horizontal 2.svg"
+    />
+    <img
+      alt="um cara feliz"
+      class="sc-guDLey gjEtAq"
+      src="carinhaDahora.svg"
+    />
+  </header>
+  <section
+    class="sc-fsYfdN bzCmZT"
+  >
+    <div
+      class="sc-qZrbh idFbJ"
+    >
+      <form>
+        <h1
+          class="sc-dmyCSP qtfrP"
+        >
+          Vamos começar!
+        </h1>
+        <div
+          class="sc-jTQCzO fCYqRp"
+        >
+          <input
+            class="inputStyled"
+            placeholder="Insira os nomes dos participantes"
+            type="text"
+            value=""
+          />
+          <button
+            class="sc-hLQSwg gqOfCs"
+            disabled=""
+          >
+            Adicionar
+          </button>
+        </div>
+        <h2
+          class="sc-gLLuof iAyCrF"
+        />
+      </form>
+      <ul
+        class="sc-jsEeTM iSgqsd"
+      />
+      <footer
+        class="sc-iBdnpw bJtMxv"
+      >
+        <button
+          class="sc-eDLKkx cDPfUe"
+          disabled=""
+        >
+           
+          <img
+            alt="iconePlay"
+            src="play_circle_outline.svg"
+          />
+           Iniciar brincadeira!
+        </button>
+        <img
+          alt="imagem de duas sacolas de compras"
+          src="Wavy Buddies Shopping Bags.svg"
+        />
+      </footer>
+    </div>
+  </section>
+</div>
+`;

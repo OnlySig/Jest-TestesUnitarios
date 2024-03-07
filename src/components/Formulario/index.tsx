@@ -5,20 +5,14 @@ import { useAddParticipante } from '../../states/hook/useAddParticipante'
 import Title from '../Title'
 import { idGem } from '../../states/utils/idGem'
 import { useMensagemDeErro } from '../../states/hook/useMensagemDeErro'
-
-
-const ButtonStyled = styled.button `
-    height: 80px;
-    width: 227px;
-    border: 2px solid #000;
-    border-radius: 0 36px 36px 0;
-    box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.75);
-    background-color: #C4C4C4;
-    color: #444444;
-    cursor: pointer;
+import Botao from '../Botao'
+const ContainerInput = styled.div `
+    display: flex;
+    width: 100%;
 `
-
-
+const ErroMsg = styled.h2 `
+    color: red;
+`
 const Formulario = () => {
     const mensagemDeErro = useMensagemDeErro()
     const [nome, setNome] = useState<string>('')
@@ -28,7 +22,7 @@ const Formulario = () => {
         e.preventDefault()
         hookAdicionarPt({
             nome: nome,
-            id: idGem()
+            id: mensagemDeErro ? undefined : idGem()
         })
         setNome('')
         inputRef.current?.focus()
@@ -36,11 +30,11 @@ const Formulario = () => {
     return(
         <form onSubmit={submitar}>
             <Title title='Vamos começar!'/>
-            <div>
+            <ContainerInput>
                 <input className='inputStyled' ref={inputRef} type="text" placeholder="Insira os nomes dos participantes" onChange={e => setNome(e.target.value)} value={nome}/>
-                <ButtonStyled disabled={!nome}>Adicionar</ButtonStyled>
-                {mensagemDeErro && <p role='alert'>{mensagemDeErro}</p>}
-            </div>
+                <Botao type='btnInput' disabled={!nome}>Adicionar</Botao>
+            </ContainerInput>
+            <ErroMsg>{mensagemDeErro && <p role='alert'>{mensagemDeErro}</p>}</ErroMsg>
         </form>
     )
 }

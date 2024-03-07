@@ -1,14 +1,15 @@
-import { useRecoilValue, useSetRecoilState } from "recoil"
+import { useSetRecoilState } from "recoil"
 import { erroState, listaParticipantesState } from "../atom"
 import { IParticipantes } from "../../interfaces/IParticipantes"
+import { useListaDeParticipantes } from "./useListaDeParticipantes"
 
 export const useAddParticipante = () => {
     const setLista = useSetRecoilState(listaParticipantesState)
     const setErro = useSetRecoilState(erroState)
-    const hookLista = useRecoilValue(listaParticipantesState)
+    const hookLista: IParticipantes[] = useListaDeParticipantes()
     return (event: IParticipantes) => {
         const itemRepetido = hookLista.find(item => item.nome === event.nome)
-        if(event.nome === '' || itemRepetido !== undefined ){
+        if(itemRepetido !== undefined ){
             setErro('Nomes duplicados não são permitidos!')
             setTimeout(() => {
                 setErro("")

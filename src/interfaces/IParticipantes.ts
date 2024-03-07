@@ -1,4 +1,4 @@
 export interface IParticipantes {
     nome: string
-    id: number
+    id: number | undefined
 }
